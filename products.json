@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1,
+        "name": "Monitor Led 24 Asus Full Hd 165Hz VG248QG TN",
+        "price": 47.789,
+        "image": "/img/MonitorLed24.jpeg",
+        "stock": "1"
+        },    
+    {
+        "id": 2,
+        "name": "Monitor Led 24 Asus Full Hd 165Hz VG248QG TN",
+        "price": 459.999,
+        "image": "/img/GeForceRTX3080.jpeg",
+        "stock": "1"
+        },
+    {
+        "id": 3,
+        "name": "Monitor Led 24 Asus Full Hd 165Hz VG248QG TN",
+        "price": 49.199,
+        "image": "/img/Ryzen75700G.jpeg",
+        "stock": "1"
+        },
+    {
+        "id": 4,
+        "name": "Monitor Led 24 Asus Full Hd 165Hz VG248QG TN",
+        "price": 195.999,
+        "image": "/img/GeForcRTX3060.jpeg",
+        "stock": "1"
+        },
+    {
+        "id": 5,
+        "name": "Monitor Led 24 Asus Full Hd 165Hz VG248QG TN",
+        "price": 47.789,
+        "image": "/img/MonitorLed24.jpeg",
+        "stock": "1"
+        },    
+    {
+        "id": 6,
+        "name": "Monitor Led 24 Asus Full Hd 165Hz VG248QG TN",
+        "price": 459.999,
+        "image": "/img/MonitorLed24.jpeg",
+        "stock": "1"
+        },
+    {
+        "id": 7,
+        "name": "Monitor Led 24 Asus Full Hd 165Hz VG248QG TN",
+        "price": 49.199,
+        "image": "/img/MonitorLed24.jpeg",
+        "stock": "1"
+        },
+    {
+        "id": 8,
+        "name": "Monitor Led 24 Asus Full Hd 165Hz VG248QG TN",
+        "price": 195.999,
+        "image": "/img/MonitorLed24.jpeg",
+        "stock": "1"
+        }
+]
