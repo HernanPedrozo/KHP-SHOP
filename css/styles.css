@@ -50,6 +50,7 @@ a {
 
 .card {
     border: 0px;
+    width: 18rem;
 }
 
 .card img {
@@ -166,4 +167,30 @@ footer .display-flex {
     font-family: 'Roboto', sans-serif;
     width: 100%;
     font-size: 14px;
+}
+.fa-chevron-left {
+    display: block;
+    font-size: 24px;
+    font-weight: 900;
+    width: 45px;
+    height: 60px;
+    padding: 18px 10px;
+    background-color: #2983BC;
+    color: #fff;
+    border:none;
+    border-color: #2983BC;
+    border-radius: 10px;
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 20%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+}
+.fa-chevron-right{
+    font-size: 24px;
+    width: 45px;
+    height: 60px;
+    padding: 20px 10px;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    background-color: #2983BC;
+    border-color: #2983BC;
+    box-shadow: 0 2px   2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 20%), 0 1px 5px 0 rgb(0 0 0 / 12%);
 }
