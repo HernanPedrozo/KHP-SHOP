@@ -3,7 +3,7 @@ let total = 0; // Inicilizo una variable para calcular el total del carrito
 let cart = []; // Inicializo un array de carrito
 const productContainer = document.getElementById('product-container'); // OBTENGO EL ELEMENTO DEL CATALOGO
 const trolleyContainer = document.getElementById('trolley-container'); //
-//const productContainerMain = document.getElementById('product-container-main');
+const productContainerMain = document.getElementById('product-container-main');
 const stockProducts = []; // guardo los productos en una varibale
 function recoverStock(){
     let stock = JSON.parse(localStorage.getItem("stock"));
@@ -16,7 +16,7 @@ $.getJSON(`products.json`, function (data) { // Obtengo los datos del archiv JSO
     localStorage.setItem("stock", JSON.stringify(data));
     recoverStock();
     showProducts(data);
-    //showProductsMain(data);
+    showProductsMain(data);
 });
 //showProducts(stockProducts); // Muestro los productos en el html 
 
@@ -43,30 +43,30 @@ function showProducts(array) {
         })
     }
 }
-// FUNCION PARA MOSTRAR PRODUCTOS EN EL MAIN
-// function showProductsMain(array) {
-//     let productSave = array[0];
-//     // for (const product of array) {
-//     let div = document.createElement('div');
-//     div.classList.add("product");
-//     div.innerHTML += `<div class="card" style="width: 18rem;">
-//                             <img src=${array.image} class="card-img-top" alt=""/>
-//                             <div class="card-body">
-//                             <h5 class="card-title">${array.name}</h5>
-//                             <p class="card-text">${array.price}</p>
-//                             <div class="button-properties">
-//                             <button type="button" id="button${array.id}" class="btn btn-primary mb-2 px-5 text-uppercase w-100">Comprar ahora</button>
-//                             <button type="button" id="addProductmore"${array.id}" class="btn btn-outline-primary px-5 text-uppercase fs-">Agregar al carrito</button>
-//                             </div>
-//                             </div>
-//                     </div>`
-//     productContainerMain.appendChild(div);
+//FUNCION PARA MOSTRAR PRODUCTOS EN EL MAIN
+function showProductsMain(array) {
+    let productSave = array[0];
+     // for (const product of array) {
+    let div = document.createElement('div');
+    div.classList.add("product");
+    div.innerHTML += `<div class="card" style="width: 18rem;">
+                            <img src=${array.image} class="card-img-top" alt=""/>
+                            <div class="card-body">
+                            <h5 class="card-title">${array.name}</h5>
+                            <p class="card-text">${array.price}</p>
+                            <div class="button-properties">
+                            <button type="button" id="button${array.id}" class="btn btn-primary mb-2 px-5 text-uppercase w-100">Comprar ahora</button>
+                            <button type="button" id="addProductmore"${array.id}" class="btn btn-outline-primary px-5 text-uppercase fs-">Agregar al carrito</button>
+                            </div>
+                            </div>
+                    </div>`
+    productContainerMain.appendChild(div);
 
-//     let button = document.getElementById(`button${array.id}`);
-//     button.addEventListener(`click`, () => {
-//         addToCart(array.id);
-//     })
-// }
+    let button = document.getElementById(`button${array.id}`);
+    button.addEventListener(`click`, () => {
+        addToCart(array.id);
+    })
+}
 // funcion de agregar al carrito 
 function addToCart(id) {
     let addToProduct = stockProducts.find(prod => prod.id == id);
