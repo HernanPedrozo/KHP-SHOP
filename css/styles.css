@@ -41,7 +41,23 @@ a {
     text-decoration: none;
     color: white;
 }
-
+#button-cart {
+    border: none;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    background-color: white;
+    border-radius: 50%;
+    padding: 10px 20px;
+    transition: all .3s;
+}
+#button-cart:hover {
+    cursor: pointer;
+    color: white;
+    background-color: rgb(225, 76, 65);
+}
+#button-cart:focus {
+    outline: none;
+}
 .catalogo {
     display: grid;
     grid-template-columns: auto;
@@ -60,7 +76,7 @@ a {
 
 h1 {
     color: black;
-    font-size: 20px;
+    font-size: 23px;
     font-weight: normal;
     font-style: normal;
     margin-bottom: 50px;
@@ -128,6 +144,9 @@ p {
 footer {
     color: white;
     font-size: 24px;
+}
+.copyright{
+    color: white;
 }
 
 footer .display-flex {
