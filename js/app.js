@@ -83,9 +83,19 @@ function addToCart(id) {
     div.innerHTML = `<p>${addToProduct.name}</p>
                         <p>Precio: $${addToProduct.price}</p>
                         <p>Cantidad: ${addToProduct.stock}</p>
-                        <button class="button-remove"> <i class="fas fa-backspace"></i></button>`
+                        <button id="remove${addToProduct.id}" class="button-remove"> <i class="fas fa-backspace"></i></button>`
     trolleyContainer.appendChild(div);
+
+    //BOTON ELIMINAR DONDE VA A ELIMINAR LO QUE SE ESTE HACIENDO CLICK
+
+    let buttonRemove =document.getElementById(`remove${addToProduct.id}`);
+
+    buttonRemove.addEventListener(`click`, ()=>{
+        buttonRemove.parentElement.remove();
+        cart = cart.filter(prodE => prodE.id !=addToProduct.id);
+    });
 }
+
 // funcion de agregar al carrito en el Main
 function addToCartMain(id) {
     let addToProductMain = productFeatured.find(prod => prod.id == id);
@@ -95,7 +105,7 @@ function addToCartMain(id) {
     div.classList.add('productInCart');
     div.innerHTML = `<p>${addToProductMain.name}</p>
                         <p>$${addToProductMain.price}</p>   
-                        <button class="button-remove"> <i class="fas fa-backspace"></i></button>`
+                        <button id="remove${addToProductMain.id}" class="button-remove"> <i class="fas fa-backspace"></i></button>`
     trolleyContainer.appendChild(div);
 }
 
