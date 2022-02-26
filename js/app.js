@@ -8,9 +8,9 @@ const productContainerMain = document.getElementById('product-container-main');
 const totalPrice = document.getElementById('total-price');
 const stockProducts = []; // guardo los productos en una varibale
 
-function recoverStock(){
+function recoverStock() {
     let stock = JSON.parse(localStorage.getItem("stock"));
-    if(stock){
+    if (stock) {
         stock.forEach(objeto => stockProducts.push(objeto)); // Por cada objeto que tenga el stockguardarmelo en el array 
     }
 }
@@ -18,10 +18,10 @@ $.getJSON(`products.json`, function (data) { // Obtengo los datos del archiv JSO
     localStorage.setItem("stock", JSON.stringify(data));
     recoverStock();
 
-    if(window.location.pathname === "/productos.html"){
+    if (window.location.pathname === "/productos.html") {
         showProducts(data);
-    }else{
-        const  productFeatured = data.filter(prod => prod.destacado === "true");
+    } else {
+        const productFeatured = data.filter(prod => prod.destacado === "true");
         showProductsMain(productFeatured);
     }
 });
@@ -53,9 +53,9 @@ function showProducts(array) {
 //FUNCION PARA MOSTRAR PRODUCTOS EN EL MAIN
 function showProductsMain(array) {
     for (const prod of array) {
-    let div = document.createElement('div');
-    div.classList.add("product");
-    div.innerHTML += `<div class="card">
+        let div = document.createElement('div');
+        div.classList.add("product");
+        div.innerHTML += `<div class="card">
                             <img src=${prod.image} class="card-img-top" alt=""/>
                             <div class="card-body">
                             <h5 class="card-title">${prod.name}</h5>
@@ -66,34 +66,44 @@ function showProductsMain(array) {
                             </div>
                             </div>
                     </div>`
-    productContainerMain.appendChild(div);
-    let button = document.getElementById(`button${prod.id}`);
-    button.addEventListener(`click`, () => {
-        addToCartMain(prod.id);
+        productContainerMain.appendChild(div);
+        let button = document.getElementById(`button${prod.id}`);
+        button.addEventListener(`click`, () => {
+            addToCartMain(prod.id);
         })
-    }    
+    }
 }
 // funcion de agregar al carrito en Productos
 function addToCart(id) {
-    let addToProduct = stockProducts.find(prod => prod.id == id);
-    cart.push(addToProduct);
-    updateCart();
-    let div = document.createElement(`div`);
-    div.classList.add('productInCart');
-    div.innerHTML = `<p>${addToProduct.name}</p>
+    // SE FRENA EL OBJETO A QUE SE REPITIERA
+    let repeated = cart.find(prodRepeated => prodRepeated.id == id);
+    if (repeated) {
+        repeated.stock = repeated.stock + 1;
+        document.getElementById(`stock${repeated.id}`).innerHTML = `<p id="stock${repeated.id}"> Cantidad: ${repeated.stock}</p>`
+        updateCart();
+    } else {
+        let addToProduct = stockProducts.find(prod => prod.id == id);
+        cart.push(addToProduct);
+        updateCart();
+        let div = document.createElement(`div`);
+        div.classList.add('productInCart');
+        div.innerHTML = `<p>${addToProduct.name}</p>
                         <p>Precio: $${addToProduct.price}</p>
-                        <p>Cantidad: ${addToProduct.stock}</p>
+                        <p id="stock${addToProduct.id}"> Cantidad: ${addToProduct.stock}</p>
                         <button id="remove${addToProduct.id}" class="button-remove"> <i class="fas fa-backspace"></i></button>`
-    trolleyContainer.appendChild(div);
+        trolleyContainer.appendChild(div);
 
-    //BOTON ELIMINAR DONDE VA A ELIMINAR LO QUE SE ESTE HACIENDO CLICK
+        //BOTON ELIMINAR DONDE VA A ELIMINAR LO QUE SE ESTE HACIENDO CLICK
 
-    let buttonRemove =document.getElementById(`remove${addToProduct.id}`);
+        let buttonRemove = document.getElementById(`remove${addToProduct.id}`);
 
-    buttonRemove.addEventListener(`click`, ()=>{
-        buttonRemove.parentElement.remove();
-        cart = cart.filter(prodE => prodE.id !=addToProduct.id);
-    });
+        buttonRemove.addEventListener(`click`, () => {
+            buttonRemove.parentElement.remove();
+            cart = cart.filter(prodE => prodE.id != addToProduct.id);
+            updateCart();
+        });
+    }
+
 }
 
 // funcion de agregar al carrito en el Main
@@ -109,8 +119,8 @@ function addToCartMain(id) {
     trolleyContainer.appendChild(div);
 }
 
-function updateCart(){
-    totalPrice.innerText = cart.reduce((acc,el)=> acc + (el.price * el.stock),0).toFixed(3);
+function updateCart() {
+    totalPrice.innerText = cart.reduce((acc, el) => acc + (el.price * el.stock), 0).toFixed(3);
 }
 
 /*
