@@ -73,7 +73,30 @@ a {
     width: 100%;
     margin: 0;
 }
-
+.productInCart{
+    display: flex;
+    justify-content: space-between;
+    border-left: 5px solid lightblue;
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+    margin: 5px 0;
+    padding: 5px 10px;
+}
+.productInCart:hover{
+    border-left: 5px solid rgb(225, 76, 65);
+}
+.button-remove{
+    color: red;
+    border: none;
+    font-size: 20px;
+    background-color:white;
+}
+.boton-remove:hover {
+    cursor: pointer;
+}
+.boton-remove:focus {
+    outline: none;
+}
 h1 {
     color: black;
     font-size: 23px;

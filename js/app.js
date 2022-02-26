@@ -96,8 +96,8 @@ function addToCartMain(id) {
     trolleyContainer.appendChild(div);
 }
 
-function actualizarCarrito(){
-    contadorCarrito.innerText = carritoDeCompras.reduce()
+function updateCart(){
+    contadorCarrito.innerText = cart.reduce((acc, el) => acc + el.stock,0);
 }
 /*
 // FUNCION PARA REMOVER PRODUCTO DEL CARRITO
