@@ -44,7 +44,7 @@
                                 <a class="mainNav__link" href="./productos.html">Productos</a>
                             </li>
                             <li class="mainNav__item">
-                                <button class="mainNav__link" href="">
+                                <button id="button-cart" class="mainNav__link" href="">
                                     <i class="fas fa-shopping-cart"></i>
                                 </button>
                             </li>
@@ -76,7 +76,7 @@
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
                 data-bs-slide="prev">
                 <span class="fas fa-chevron-left" aria-hidden="true">
-                    
+
                 </span>
                 <span class="visually-hidden">Previous</span>
             </button>
@@ -94,7 +94,26 @@
             </div>
         </div>
     </main>
-    
+    <!--MODAL -->
+    <div class="modal" id="showModal" tabindex="-1">
+        "<div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Carrito</h5>
+                    <button type="button" id="close-cart" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="trolley-container">
+
+                    <p>Precio total es:<span id="priceTotal"></span></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Comprar</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- FOOTER -->
     <footer class="foot">
         <div class="container">

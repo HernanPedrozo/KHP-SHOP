@@ -35,7 +35,7 @@ function showProducts(array) {
                             <img src=${product.image} class="card-img-top" alt=""/>
                             <div class="card-body">
                             <h5 class="card-title">${product.name}</h5>
-                            <p class="card-text">${product.price}</p>
+                            <p class="card-text">$${product.price}</p>
                             <div class="button-properties">
                             <button type="button" data-bs-toggle="modal" data-bs-target="#showModal" id="button${product.id}" class="btn btn-primary mb-2 px-5 text-uppercase w-100">Comprar ahora</button>
                             <button type="button" data-bs-toggle="modal" data-bs-target="#showModal" id="addProductmore"${product.id}" class="btn btn-outline-primary px-5 text-uppercase">Agregar al carrito</button>
@@ -58,7 +58,7 @@ function showProductsMain(array) {
                             <img src=${prod.image} class="card-img-top" alt=""/>
                             <div class="card-body">
                             <h5 class="card-title">${prod.name}</h5>
-                            <p class="card-text">${prod.price}</p>
+                            <p class="card-text">$${prod.price}</p>
                             <div class="button-properties">
                             <button type="button" id="button${prod.id}" class="btn btn-primary mb-2 px-5 text-uppercase w-100">Comprar ahora</button>
                             <button type="button" id="addProductmore"${prod.id}" class="btn btn-outline-primary px-5 text-uppercase fs-">Agregar al carrito</button>
@@ -96,9 +96,10 @@ function addToCartMain(id) {
     trolleyContainer.appendChild(div);
 }
 
-function updateCart(){
+/*function updateCart(){
     contadorCarrito.innerText = cart.reduce((acc, el) => acc + el.stock,0);
 }
+*/
 /*
 // FUNCION PARA REMOVER PRODUCTO DEL CARRITO
 
