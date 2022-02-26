@@ -84,6 +84,7 @@ function addToCart(id) {
     } else {
         let addToProduct = stockProducts.find(prod => prod.id == id);
         cart.push(addToProduct);
+        addToProduct.stock = 1;
         updateCart();
         let div = document.createElement(`div`);
         div.classList.add('productInCart');
