@@ -5,6 +5,7 @@ let productFeatured = [];
 const productContainer = document.getElementById('product-container'); // OBTENGO EL ELEMENTO DEL CATALOGO
 const trolleyContainer = document.getElementById('trolley-container'); //
 const productContainerMain = document.getElementById('product-container-main');
+const totalPrice = document.getElementById('total-price');
 const stockProducts = []; // guardo los productos en una varibale
 
 function recoverStock(){
@@ -76,10 +77,12 @@ function showProductsMain(array) {
 function addToCart(id) {
     let addToProduct = stockProducts.find(prod => prod.id == id);
     cart.push(addToProduct);
+    updateCart();
     let div = document.createElement(`div`);
     div.classList.add('productInCart');
     div.innerHTML = `<p>${addToProduct.name}</p>
-                        <p>${addToProduct.price}</p>   
+                        <p>Precio: $${addToProduct.price}</p>
+                        <p>Cantidad: ${addToProduct.stock}</p>
                         <button class="button-remove"> <i class="fas fa-backspace"></i></button>`
     trolleyContainer.appendChild(div);
 }
@@ -91,15 +94,15 @@ function addToCartMain(id) {
     let div = document.createElement(`div`);
     div.classList.add('productInCart');
     div.innerHTML = `<p>${addToProductMain.name}</p>
-                        <p>${addToProductMain.price}</p>   
+                        <p>$${addToProductMain.price}</p>   
                         <button class="button-remove"> <i class="fas fa-backspace"></i></button>`
     trolleyContainer.appendChild(div);
 }
 
-/*function updateCart(){
-    contadorCarrito.innerText = cart.reduce((acc, el) => acc + el.stock,0);
+function updateCart(){
+    totalPrice.innerText = cart.reduce((acc,el)=> acc + (el.price * el.stock),0).toFixed(3);
 }
-*/
+
 /*
 // FUNCION PARA REMOVER PRODUCTO DEL CARRITO
 

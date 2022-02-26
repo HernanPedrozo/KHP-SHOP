@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "name": "Monitor Led 24 Asus Full Hd 165Hz VG248QG TN",
+        "name": "Monitor Led 24 Asus Full Hd 165Hz",
         "price": 47.789,
         "image": "/img/MonitorLed24.jpeg",
         "stock": "1",
@@ -9,8 +9,8 @@
         },  
     {
         "id": 2,
-        "name": "Placa De Video GeForce RTX 3080 Ti 12Gb Msi Ventus 3X Oc",
-        "price": 399.999,
+        "name": "Placa De Video GeForce RTX 3080 Ti 12Gb Msi",
+        "price": 400.999,
         "image": "/img/GeForceRTX3080.jpeg",
         "stock": "1",
         "destacado": "false"

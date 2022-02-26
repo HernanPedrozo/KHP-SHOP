@@ -41,6 +41,7 @@ a {
     text-decoration: none;
     color: white;
 }
+
 #button-cart {
     border: none;
     color: rgb(0, 0, 0);
@@ -50,14 +51,17 @@ a {
     padding: 10px 20px;
     transition: all .3s;
 }
+
 #button-cart:hover {
     cursor: pointer;
     color: white;
     background-color: rgb(225, 76, 65);
 }
+
 #button-cart:focus {
     outline: none;
 }
+
 .catalogo {
     display: grid;
     grid-template-columns: auto;
@@ -73,7 +77,16 @@ a {
     width: 100%;
     margin: 0;
 }
-.productInCart{
+.modal-content {
+    min-width: 500px;
+}
+
+.modal-content .price-product {
+    padding-top: 10px;
+
+}
+
+.productInCart {
     display: flex;
     justify-content: space-between;
     border-left: 5px solid lightblue;
@@ -82,21 +95,26 @@ a {
     margin: 5px 0;
     padding: 5px 10px;
 }
-.productInCart:hover{
+
+.productInCart:hover {
     border-left: 5px solid rgb(225, 76, 65);
 }
-.button-remove{
+
+.button-remove {
     color: red;
     border: none;
     font-size: 20px;
-    background-color:white;
+    background-color: white;
 }
+
 .boton-remove:hover {
     cursor: pointer;
 }
+
 .boton-remove:focus {
     outline: none;
 }
+
 h1 {
     color: black;
     font-size: 23px;
@@ -168,7 +186,8 @@ footer {
     color: white;
     font-size: 24px;
 }
-.copyright{
+
+.copyright {
     color: white;
 }
 
@@ -210,6 +229,7 @@ footer .display-flex {
     width: 100%;
     font-size: 14px;
 }
+
 .fa-chevron-left {
     display: block;
     font-size: 24px;
@@ -219,12 +239,13 @@ footer .display-flex {
     padding: 18px 10px;
     background-color: #2983BC;
     color: #fff;
-    border:none;
+    border: none;
     border-color: #2983BC;
     border-radius: 10px;
     box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 20%), 0 1px 5px 0 rgb(0 0 0 / 12%);
 }
-.fa-chevron-right{
+
+.fa-chevron-right {
     font-size: 24px;
     width: 45px;
     height: 60px;
@@ -234,5 +255,5 @@ footer .display-flex {
     color: #fff;
     background-color: #2983BC;
     border-color: #2983BC;
-    box-shadow: 0 2px   2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 20%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 20%), 0 1px 5px 0 rgb(0 0 0 / 12%);
 }
